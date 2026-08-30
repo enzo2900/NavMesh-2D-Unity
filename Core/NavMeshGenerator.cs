@@ -198,6 +198,7 @@ public class NavMeshGenerator : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if(!Application.isPlaying) return;
         if (!gizmos) return;
         if(subdivisionBuilder == null) return;
         Gizmos.color = Color.red;
@@ -214,6 +215,7 @@ public class NavMeshGenerator : MonoBehaviour
 
     private void draw(HalfEdge halfEdge)
     {
+        if(!Application.isPlaying) return;
         Vector3 to = new Vector3(halfEdge.v.x, halfEdge.v.y, 0);
         Vector3 from = new Vector3(halfEdge.next.v.x, halfEdge.next.v.y, 0);
         Gizmos.DrawLine(to, from);

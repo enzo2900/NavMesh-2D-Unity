@@ -180,6 +180,7 @@ public class NavMeshEntity : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if(!Application.isPlaying) return;
         Gizmos.color = Color.darkGreen;
         for (var i = 0; i < currentPath.path.Count -1; i++)
         {
@@ -191,6 +192,7 @@ public class NavMeshEntity : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        if(!Application.isPlaying) return;
         Gizmos.color = Color.yellow;
         for (var i = 0; i < currentPath.path.Count -1; i++)
         {
