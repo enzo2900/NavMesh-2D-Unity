@@ -82,26 +82,6 @@ public class NavMeshGenerator : MonoBehaviour
                     Vertex vertexi = vertices[0];
                     points.Add(new Point(vertexi.x,vertexi.y));
                 }
-                
-                /*var bounds = collider.bounds;
-                
-                var x = bounds.min.x;
-                var yMin = bounds.min.y;
-                var xMax = bounds.max.x;
-                var yMax = bounds.max.y;
-                contraintsSegments.Add(new Segment<Vertex>(new Vertex(x, yMin),
-                    new Vertex(xMax, yMin)));
-                
-                contraintsSegments.Add(new Segment<Vertex>(new Vertex(xMax, yMin),
-                    new Vertex(xMax, yMax)));
-                contraintsSegments.Add(new Segment<Vertex>(new Vertex(xMax, yMax),
-                    new Vertex(x, yMax)));
-                contraintsSegments.Add(new Segment<Vertex>(new Vertex(x, yMax),
-                    new Vertex(x, yMin)));
-                points.Add(new Point(x, yMax));
-                points.Add(new Point(x, yMin));
-                points.Add(new Point(xMax, yMin));
-                points.Add(new Point(xMax, yMax));*/
             }
 
             if (contraintsSegments.Count != 0)
@@ -203,46 +183,8 @@ public class NavMeshGenerator : MonoBehaviour
             List<Point> points = new List<Point>();
             foreach (var polygonPoint in mesh.triangles)
             {
-                
                 vertices.Add(toVertex(mesh.vertices[polygonPoint]));
-                //points.Add(new Point(polygonPoint.x, polygonPoint.y));
-                
             }
-
-            //var builder = CDT.compute(points);
-            /*ar pair = builder.vertices.Where(pair => pair.Value.Count > 1).First();
-            var edgeFirst = pair.Value.First();
-            HalfEdge edgeCurrent = null;
-            if (edgeFirst.incidentFace == null)
-            {
-                vertices.Add(edgeFirst.v);
-                 edgeCurrent = edgeFirst.next;
-                
-
-                
-            }
-            else
-            {
-                edgeFirst = edgeFirst.twin;
-                vertices.Add(edgeFirst.v);
-                edgeCurrent = edgeFirst.next;
-            }
-            while (edgeCurrent != edgeFirst)
-            {
-                vertices.Add(edgeCurrent.v);
-                edgeCurrent = edgeCurrent.next;
-            }
-            Debug.Log(vertices.Count);
-            Debug.Log(vertices[0]);
-            Debug.Log(vertices[1]);
-            Debug.Log(vertices[2]);
-            Debug.Log(vertices[3]);
-            Debug.Log(vertices[4]);
-            Debug.Log(vertices[5]);
-            Debug.Log(vertices[6]);
-            Debug.Log(vertices[7]);
-            Debug.Log(vertices[8]);
-            //vertices.Reverse();*/
         }
         
         vertices.Reverse();

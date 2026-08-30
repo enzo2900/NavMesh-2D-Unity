@@ -181,12 +181,13 @@ public class SubdivisionBuilder
         }
     }
 
-    /**
-     *
-     * @param edges A list with more than 1 elements
-     * @param edges2 A list with more than 1 elements
-     * @return an CCW edge and the twin CW edge
-     */
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="edges">A list with more than 1 elements</param>
+    /// <param name="edges2">A list with more than 1 elements</param>
+    /// <returns>an CCW edge and the twin CW edge</returns>
     public Couple<HalfEdge,HalfEdge> connect(List<HalfEdge> edges,List<HalfEdge> edges2) {
         //throw new RuntimeException("Not implemented");
         var edge = edges[0];
@@ -522,7 +523,7 @@ public class SubdivisionBuilder
         HalfEdge first = edges.Where(e=>  e.incidentFace == null).First();
 
         if(first.incidentFace != null) {
-            throw new Exception("The algorithm is so bad it cant get a correct outer edge on the first try in outerEdgeBounded");
+            throw new Exception("First edge is not outer.");
         }
         HalfEdge current = first.next;
         int counter = 0;
