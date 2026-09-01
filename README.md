@@ -1,6 +1,6 @@
 # 2D Dynamic NavMesh & Entity Pathfinding for Unity
 
-A dynamic 2D Navigation Mesh generator and agent movement system for Unity. It bakes navmesh geometry at runtime considering scene obstacles and steers entities through unexplored or changing environments.
+A dynamic 2D Navigation Mesh generator and agent movement system for Unity. It bakes navmesh geometry at runtime considering scene obstacles.
 
 ## 🛠️ Components
 
